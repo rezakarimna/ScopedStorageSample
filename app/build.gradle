@@ -7,6 +7,9 @@ android {
     compileSdk 30
 
     defaultConfig {
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+        }
         applicationId "com.scopedstoragesample"
         minSdk 19
         targetSdk 30
@@ -28,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
