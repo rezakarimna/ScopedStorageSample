@@ -28,6 +28,7 @@ class DeleteMediaStoreActivity : AppCompatActivity(), ClickItem {
     private var writePermissionGranted = false
     private lateinit var permissionsLauncher: ActivityResultLauncher<Array<String>>
     private lateinit var intentSenderLauncher: ActivityResultLauncher<IntentSenderRequest>
+    private var deletedImageUri: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +56,9 @@ class DeleteMediaStoreActivity : AppCompatActivity(), ClickItem {
         intentSenderLauncher =
             registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) {
                 if (it.resultCode == RESULT_OK) {
+                    if(Build.VERSION.SDK_INT == Build.VERSION_CODES.Q) {
+                        deletePhotoFromExternalStorage(deletedImageUri)
+                    }
                     Toast.makeText(this, "Photo deleted successfully", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Photo couldn't be deleted", Toast.LENGTH_SHORT).show()
@@ -147,6 +151,7 @@ class DeleteMediaStoreActivity : AppCompatActivity(), ClickItem {
 
     override fun selectItem(fileName: ImageModel) {
         Log.i("TAGselectItem", "selectItem: " + fileName.urlImage)
+        deletedImageUri = fileName.urlImage
         deletePhotoFromExternalStorage(fileName.urlImage)
 
     }
