@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Sdk/Project/ScopedStorageSample/app/src/main/res/drawable/rec_black.xml" value="0.24537037037037038" />
+        <entry key="..\:/Sdk/Project/ScopedStorageSample/app/src/main/res/layout/activity_delete_media_store.xml" value="0.23641304347826086" />
         <entry key="..\:/Sdk/Project/ScopedStorageSample/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Sdk/Project/ScopedStorageSample/app/src/main/res/layout/fragment_copy_and_cut_file.xml" value="0.25416666666666665" />
         <entry key="..\:/Sdk/Project/ScopedStorageSample/app/src/main/res/layout/fragment_select_and_edit_file.xml" value="0.25416666666666665" />
+        <entry key="..\:/Sdk/Project/ScopedStorageSample/app/src/main/res/layout/item_gallery.xml" value="0.23641304347826086" />
       </map>
     </option>
   </component>
